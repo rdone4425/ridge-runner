@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ridge Runner — a bush-plane game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="statusbar"><span id="status">Ridge Runner</span><button id="pause-btn" type="button">❚❚ Pause</button><button id="mute-btn" type="button">🔊 Sound on</button></div>
+
+<div id="screen-title" class="screen">
+  <div class="panel">
+    <h1>Ridge Runner</h1>
+    <p class="tagline">A bush plane, three valleys, and a fuel gauge that never lies.</p>
+    <p>Thread the rings, drop the crates, and bring her home to the grass strip.
+       Mind the mountains, mind the wind, and keep the speed above 55 knots.</p>
+    <div class="buttons">
+      <button id="fly-btn" type="button" class="primary">Fly</button>
+      <button id="how-btn" type="button">How to fly</button>
+    </div>
+    <div id="howto" class="hidden">
+      <table>
+        <tr><td>← → / A D</td><td>Turn</td></tr>
+        <tr><td>↑ / W</td><td>Climb</td></tr>
+        <tr><td>↓ / S</td><td>Descend</td></tr>
+        <tr><td>Mouse wheel / + −</td><td>Throttle (or drag the lever)</td></tr>
+        <tr><td>Space</td><td>Drop a supply crate</td></tr>
+        <tr><td>P / Esc</td><td>Pause</td></tr>
+        <tr><td>M</td><td>Sound on / off</td></tr>
+        <tr><td>R</td><td>Restart the mission</td></tr>
+      </table>
+      <p>Land on a runway to refuel. Fly through a ring at its altitude to score.
+         Too slow and she stalls; too low over the hills and she is done.</p>
+    </div>
+  </div>
+</div>
+
+<div id="screen-select" class="screen hidden">
+  <div class="panel wide">
+    <h2>Choose a mission</h2>
+    <div id="mission-list"></div>
+    <div class="buttons">
+      <button id="title-btn" type="button">← Back</button>
+    </div>
+  </div>
+</div>
+
+<div id="screen-paused" class="screen hidden">
+  <div class="panel">
+    <h2>Paused</h2>
+    <p>The valley waits. The fuel does not burn while you think.</p>
+    <div class="buttons">
+      <button id="resume-btn" type="button" class="primary">Resume</button>
+      <button id="restart-btn" type="button">Restart mission</button>
+      <button id="quit-btn" type="button">Quit to title</button>
+    </div>
+  </div>
+</div>
+
+<div id="screen-over" class="screen hidden">
+  <div class="panel">
+    <h2 id="over-title">Down</h2>
+    <p id="over-text"></p>
+    <p id="over-score"></p>
+    <div class="buttons">
+      <button id="again-btn" type="button" class="primary">Fly again</button>
+      <button id="missions-btn" type="button">Missions</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
